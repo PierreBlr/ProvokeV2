@@ -1,0 +1,44 @@
+easy_admin:
+    design:
+        menu:
+            - label: 'Provoke'
+            - label: 'Produits'
+              icon: 'database'
+              children:
+                - {entity: 'MainCategorie', icon: 'inbox', label: 'Categories Principales'}
+                - {entity: 'Categorie', icon: 'inbox', label: 'Sous-Categories'}
+                - {entity: 'Article', icon: 'inbox', label: 'Articles'}
+            - label: 'Clients'
+            - label: 'Commandes'
+    entities:
+        MainCategorie:
+            class: App\Entity\MainCategorie
+            form:
+              fields:
+                - {property: 'nom'}
+                - {property: 'url'}
+        Categorie:
+             class: App\Entity\Categorie
+        Article:
+            class: App\Entity\Article
+            list:
+                fields:
+                    - "nom"
+                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
+                    - "prix"
+            form:
+                fields:
+                    - "nom"
+                    - "url"
+                    - "description"
+                    - "prix"                
+                    - { property: 'imageFile', type: 'vich_file' }
+                    - "actif"
+                    - "categorie"    
+                actions:
+                    - {name: 'editer', icon: 'pencil', label: false, css_class: 'btn btn-secondary'} 
+                    - {name: 'supprimer', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }            
+        
