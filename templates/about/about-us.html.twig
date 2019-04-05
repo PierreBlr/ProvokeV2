@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About us | Provoke{% endblock %}
+
+{% block body %}
+<style>
+    .about { margin: 1em auto; width: 95%; font: 1.2rem/1.5 sans-serif; }
+</style>
+
+<div class="container-fluid">
+    <div class="about">
+        <p>&nbsp;</p>
+        <div class="encart-propos mb-5">
+            <div class="texte-propos">
+                <h1>A propos de nous</h1>
+                <p>Provoke est une marque de vêtements et accessoires fitness - boutique en ligne - basée en France.</p>
+                <p>Crée en 2019 par deux jeunes pratiquants de musculation, elle est le fruit d'une réflexion entre les deux amis souhaitant allier leur pratique de ce sport et leur volonté d'entreprendre</p>
+                <p>C'est cette passion ardente et le goût de la création de pièces uniques et novatrices, faites pour la performance qui a déclenché le mouvement Provoke</p>
+                <p>Avant toute action il y a une idée.</p>
+                <p>Nous existons pour vous donner les outils qui vous aideront à développer votre plein potentiel, à transformer toutes vos idées en actions.</p>
+                <p>Personne ne vous donnera votre chance, provoquez-la.</p>
+                <p>Provoke it.</p>
+                <p>Provoke est géré par :</p>
+                <p><strong>Machin Chose</strong> - <i>Createur</i></p>
+                <p><strong>Machin Chouette</strong> - <i>Directeur Général</i></p>
+            </div>
+            <img src = {{ asset('uploads/imagesinfo/about.jpg')}} class="left img-fluid" alt="Responsive image">
+        </div>    
+        
+        <div class="page-about-content mb-5">
+            <div class="page-about-content-inner">
+                <h1>Nos valeurs fondamentales</h1>
+                <p><strong>Famille</strong> Nous sommes une famille qui pense de la même façon et qui travaille ensemble pour réaliser nos visions.</p>
+                <p><strong>Progression</strong> Nos produit sont à l’intersection de l’ingénierie et de l’art. Pour rester à l’avant-garde des deux, nous devons être courageusement progressif et constamment conscient du futur. Nous ne sommes pas à l’abri du futur, nous sommes le futur.</p>
+                <p><strong>Vision</strong> Tout ce que nous faisons reste fidèle à notre vision et respectueux des autres. Nous sommes ici pour amener de nouvelles idées au monde. Il n’y a aucune idée trop petite ni trop grande.</p>
+            </div>
+        </div>
+        <div class="page-about-contact">
+        <h1>Contactez-nous</h1>
+        <p>Media et presse <a href="mailto:press@provoke.com" target="_blank">press@provoke.com</a></p>
+        <p>Demandes commerciales <a href="mailto:corporate@provoke.com" target="_blank">corporate@provoke.com</a></p>
+        <p>Pour toutes demandes de services à la clientèle merci de contacter <a href="mailto:support@provoke.com" target="_blank">support@provoke.com</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

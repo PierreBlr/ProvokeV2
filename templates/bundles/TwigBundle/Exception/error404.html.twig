@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Non Trouvée | Provoke{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Oups !</h1>
+    <p>Ce ne sont pas les droïdes que vous recherchez</p>
+
+    <a href="{{ path('home')}}" class="btn btn-primary">Revenir à la page d'acceuil</a>
+
+</div>
+
+{% endblock %}

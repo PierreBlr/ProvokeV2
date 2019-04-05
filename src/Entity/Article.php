@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -67,6 +69,18 @@ class Article
      * @var \DateTime
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="json_array", nullable=true)
+     */
+    private $caracteristiques;
+
+   
+
+    public function __construct()
+    {
+       
+    }
 
     public function getId(): ?int
     {
@@ -186,4 +200,21 @@ class Article
     {
         $this->updatedAt= $updatedAt;
     }
+    public function __toString() {
+        return $this->nom;
+    
+    }
+
+    public function getCaracteristiques()
+    {
+        return $this->caracteristiques;
+    }
+
+    public function setCaracteristiques($caracteristiques): self
+    {
+        $this->caracteristiques = $caracteristiques;
+
+        return $this;
+    }
+     
 }

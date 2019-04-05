@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Politique de retour | Provoke{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+
+<div class="container">
+    <h1 class="text-center">Politique des retours</h1>
+    <p>&nbsp;</p>
+   <div class="page__content">
+        <div class="row">
+            <p class="p1">Quand vous recevez votre colis, à l’intérieure se trouve un formulaire de retour avec toutes les informations dont vous avez besoin pour faire un retour.</p>
+            <div class="col mt-5">
+                <div class="encart-texte-retour">
+                    <ul class="ul1">
+                        <li class="li1">L’article doit être retourné dans les 30 jours après la date de livraison, les jours de transit ne sont pas inclus.</li><br>
+                        <li class="li1">Provoke n’offre pas la possibilité d’un échange. Tous les retours doivent être remboursés par la méthode de paiement initiale.</li><br>
+                        <li class="li1">Les articles doivent être retournés avec le formulaire des retours. Tous les colis reçus sans le formulaire ne pourront pas être traités.</li><br>
+                        <li class="li1">Les articles doivent être non lavé et non porté (sans odeurs distincts, taches, signes d’usure etc.) Les articles reçus dans une mauvaise condition vous seront retournés.</li><br>
+                        <li class="li1">Pour des raisons d’hygiènes, nous ne pouvons pas accepter les sous-vêtements ou les chaussettes.</li><br>
+                        <li class="li1">Les vêtements couverts de poils d’animaux ou d’humains ne seront <strong>pas</strong> acceptés.</li><br>
+                        <li class="li1">Avant de prendre toute mesure, tous les articles sont soigneusement inspectés.</li><br>
+                        <li class="li1">Les retours peuvent prendre jusqu’à 7 jours à traiter, donc ne soyez pas alarmé si le suivis de votre retour indique qu’il a été retourné mais vous n’avez pas reçu de confirmation.</li><br>
+                        <li class="li1">Tous les articles achetés avec une promotion (par ex : 2 t-shirts pour XX€) ne peuvent seulement être retournés pour être échangé avec un article similaire, sauf si tous les articles inclus dans l’offre sont retournés.</li><br>
+                        <li class="li1">Le colis retourné est sous la responsabilité du client jusqu’à ce que Gymshark reconnait l’avoir reçu.</li><br>
+                        <li class="li1">Notre adresse de retours est : <i>Provoke Corporation, 2, Avenue de Colmar, 67500, Strasbourg, France</i></li><br>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <img src = {{ asset('uploads/imagesinfo/politique.png')}} class="left img-fluid" alt="Responsive image">
+            </div>
+        </div>
+        <div class="container-fluid">
+            
+            <p class="p2"></p><br>
+            <p class="p1"><b>Tous les retours reçus sans le formulaire de retour seront remboursés pour le montant total.</b></p>
+            <p class="p2"></p><br><br>
+            <p class="p1">Si un article retourné enfreint un des termes de cette politique, nous réservons le droit de retourner cet article dans les mêmes conditions que nous l’avons reçu.</p>
+            <p class="p2"> </p><br>
+            <p class="p1">Tous les articles achetés à une exhibition ne peuvent seulement être retournés pour un produit similaire ou pour un crédit en magasin, nous ne pourrons pas faire un remboursement en espèces.</p>
+            
+        </div>
+	</div>
+</div>
+{% endblock %}

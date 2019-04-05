@@ -64,10 +64,10 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'url', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'mainCategorie', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'articles'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'url', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'mainCategorie', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'updateAt'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'url', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'mainCategorie', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'articles'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'url', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'mainCategorie', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'image', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\Categorie' . "\0" . 'updateAt'];
     }
 
     /**
@@ -176,6 +176,17 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
+    public function setImageFile(\Symfony\Component\HttpFoundation\File\File $image = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImageFile', [$image]);
+
+        return parent::setImageFile($image);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getId(): ?int
     {
         if ($this->__isInitialized__ === false) {
@@ -257,7 +268,7 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function __toString()
+    public function __toString(): string
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', []);
@@ -296,6 +307,83 @@ class Categorie extends \App\Entity\Categorie implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeArticle', [$article]);
 
         return parent::removeArticle($article);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImage(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImage', []);
+
+        return parent::getImage();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImageFile()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImageFile', []);
+
+        return parent::getImageFile();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImage(?string $image): \App\Entity\Categorie
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImage', [$image]);
+
+        return parent::setImage($image);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdatedAt()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdatedAt', []);
+
+        return parent::getUpdatedAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdatedAt', [$updatedAt]);
+
+        return parent::setUpdatedAt($updatedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUpdateAt(): ?\DateTimeInterface
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUpdateAt', []);
+
+        return parent::getUpdateAt();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUpdateAt(?\DateTimeInterface $updateAt): \App\Entity\Categorie
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUpdateAt', [$updateAt]);
+
+        return parent::setUpdateAt($updateAt);
     }
 
 }

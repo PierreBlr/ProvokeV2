@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Panier | Provoke{% endblock %}
+
+{% block body %}
+
+    <article id="content"  role="main">
+        <div id="arianne">
+            <nav class="progress" style="display: table; margin: 0 auto">
+                <ul class="text-center"style="list-style: none; min-width: 500px; padding-top: 20px;">
+                    <li class="current list-group-item" style="display:inline; background-color:5cb85c">Votre Panier</li>
+                    <li class="list-group-item" style="display:inline"> Livraison/Paiement</li>
+                    <li class="list-group-item" style="display:inline"> Confirmation</li>
+                </ul>
+            </nav>
+        </div>
+        <br><br>
+        <div class="recap-panier">
+            <div class="panier text-center">
+                {% include("shop/panier.html.twig") %}
+            </div>
+           
+            <div class="submit mt-5 d-flex justify-content-around">
+                <a href="{{path('home')}}" class="btn btn-primary">Continuer mes achats</a>
+                <a href="{{path('shopping_confirm')}}" class="btn btn-success">Continuer ma commande</a>
+            </div>
+        </div>
+    </article>
+{% endblock %}

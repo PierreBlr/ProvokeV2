@@ -3,8 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Categorie;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Categorie|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +17,17 @@ class CategorieRepository extends ServiceEntityRepository
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Categorie::class);
+    }
+
+    public function findAllByMainCategorie($idmaincat){
+        return $this->createQueryBuilder('c')
+            ->leftJoin('c.mainCategorie', "mc")
+            ->andWhere('mc.id = :idmc')
+            ->setParameter('idmc', $idmaincat)
+            ->orderBy('c.nom', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
     }
 
     // /**

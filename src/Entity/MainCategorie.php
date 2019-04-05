@@ -26,7 +26,7 @@ class MainCategorie
 
     /**
      * @ORM\Column(type="string", length=255)
-     *  @Assert\Regex(pattern= "/^[a-z0-9\-]+$/")
+     * @Assert\Regex(pattern= "/^[a-z0-9\-]+$/")
      */
     private $url;
 
@@ -40,12 +40,12 @@ class MainCategorie
         $this->categories = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    public function getId(): ? int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNom(): ? string
     {
         return $this->nom;
     }
@@ -57,7 +57,7 @@ class MainCategorie
         return $this;
     }
 
-    public function getUrl(): ?string
+    public function getUrl(): ? string
     {
         return $this->url;
     }

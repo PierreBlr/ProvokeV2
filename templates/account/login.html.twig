@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign In | Provoke{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">&nbsp;</div>
+            <div class="col-md-6">
+                <div class="bg-dark py-3 px-3">
+                    <h1>Connexion</h1>
+                    {% if hasError %}
+                        <div class="alert alert-danger">Une erreur est survenue, veuillez réessayer</div>
+                    {% endif %}
+                        <form action="{{ path('account_login') }}" method="post">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="text" name="_username" id="email" class="form-control" placeholder="Adresse email" required value ="{{username}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Mot de passe</label>
+                                <input type="password" name="_password" id="password" class="form-control" placeholder="Mot de passe" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Se connecter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>   
+            </div>
+        </div>
+{% endblock %}
+{% block footer %}
+        <div class="footer-container mt-5 d-flex justify-content-around fixed-bottom">
+          <div class="grid-footer-flex">
+            <div class="grid-item-left">
+              <div class="footer-flex__menu-center mt-5">
+                <h5>Provoke Your Destiny</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('about')}}">A propos de nous</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('partenaires')}}">Devenir Partenaire</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+            <div class="grid-item-center">
+              <div class="footer-contact-top mt-5">
+                <h5>Contactez-nous</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('faq')}}">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="footer-help">
+                <h5>Informations</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('retours')}}">Politique des retours</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('tailles')}}">Guide des tailles</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('cgv')}}">Conditions Générale de Vente</a></li>
+                </ul>
+              </div>
+            </div>
+          <div class="footer-copyright mt-5">
+            <div class="grid">
+              <div class="copyright-left">
+                <p role="contentinfo">@ 2019 <strong>Provoke Corporation</strong> | Tous droits réservés |<br> ProvokeUrDestiny.com</p>
+              </div>
+              <div class="copyright-center">
+                <ul class="footer-list">
+                  <li><a href="{{path('confidentialite')}}">Politique de Confidentialité</a></li>
+                <ul>
+              </div>
+              <div class="social">
+                <h5 class="mb-3">Réseaux Sociaux</h5>
+                  <a class="fb-ic mr-3" href="https://fr-fr.facebook.com/" target="blank"><i class="fab fa-facebook-f" style="font-size:23px;"></i></a>
+                  <a class="tw-ic mr-3" href="https://twitter.com/login?lang=fr" target="blank"><i class="fab fa-twitter" style="font-size:23px;"></i></a>
+                  <a class="ins-ic mr-3" href="https://www.instagram.com/?hl=fr" target="blank"><i class="fab fa-instagram" style="font-size:23px;"></i></a>
+                  <a class="ins-ic" href="https://www.spotify.com/fr/" target="blank"><i class="fab fa-spotify" style="font-size:23px;"></i></a>
+              </div>
+            </div>
+          </div>
+        {% endblock %}

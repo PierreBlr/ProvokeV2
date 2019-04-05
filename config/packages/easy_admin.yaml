@@ -1,4 +1,5 @@
 easy_admin:
+    site_name: 'Provoke'
     design:
         menu:
             - label: 'Provoke'
@@ -9,6 +10,10 @@ easy_admin:
                 - {entity: 'Categorie', icon: 'inbox', label: 'Sous-Categories'}
                 - {entity: 'Article', icon: 'inbox', label: 'Articles'}
             - label: 'Clients'
+            - label: 'Clients'
+              icon: 'database'
+              children:
+                - {entity: 'Client', icon: 'inbox', label: 'Clients'}
             - label: 'Commandes'
     entities:
         MainCategorie:
@@ -18,7 +23,21 @@ easy_admin:
                 - {property: 'nom'}
                 - {property: 'url'}
         Categorie:
-             class: App\Entity\Categorie
+            class: App\Entity\Categorie
+            list:
+                fields:
+                    - "nom"
+                    - { property: 'image', type: 'image', base_path: '%app.path.categorie_images%' }
+                    - "mainCategorie"
+            form:
+                fields:
+                    - "nom"
+                    - { property: 'imageFile', type: 'vich_image' }
+                    - "mainCategorie"
+                    - "articles"
+            show:
+                fields:
+                    - { property: 'image', type: 'image', base_path: '%app.path.categorie_images%' }  
         Article:
             class: App\Entity\Article
             list:
@@ -26,19 +45,33 @@ easy_admin:
                     - "nom"
                     - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }
                     - "prix"
+                    - "actif"
+                    - "categorie"
+                    - "caracteristiques" 
             form:
                 fields:
                     - "nom"
                     - "url"
                     - "description"
                     - "prix"                
-                    - { property: 'imageFile', type: 'vich_file' }
+                    - { property: 'imageFile', type: 'vich_image' }
                     - "actif"
-                    - "categorie"    
+                    - "categorie"
+                    - "caracteristiques"    
                 actions:
                     - {name: 'editer', icon: 'pencil', label: false, css_class: 'btn btn-secondary'} 
                     - {name: 'supprimer', icon: 'trash', label: false, css_class: 'btn btn-danger'}
             show:
                 fields:
                     - { property: 'image', type: 'image', base_path: '%app.path.article_images%' }            
-        
+        Client:
+            class: App\Entity\Client
+            list:
+                fields:
+                    - "nom"
+                    - "prenom"
+                    - "email"
+                    - "adresse"
+                    - "codePostal"
+                    - "ville"
+                    - "pays"

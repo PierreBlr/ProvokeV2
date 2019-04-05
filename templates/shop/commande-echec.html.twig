@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion de ma commmande | Provoke{% endblock %}
+
+{% block body %}
+
+<div class="panier">
+  <nav class="progress" style="display: table; margin: 0 auto">
+    <ul class="text-center"style="list-style: none; min-width: 500px; padding-top: 20px;">
+      <li class="current list-group-item" style="display:inline;">Votre Panier </li>
+      <li class="current list-group-item" style="display:inline;">Livraison/Paiement </li>
+      <li class="current-echec list-group-item" style="display:inline;">Confirmation </li>
+    </ul>
+  </nav>
+  <br>
+  <div class="container">
+    <div class="row">
+        <div class="col-commande">
+            <h2>Echec du paiement</h2>
+            <p>Une erreur semble s'être produite lors du paiement. Veuillez réessayer.</p>
+            <br>
+        </div>
+    </div>
+</div>
+  {% endblock %}
+
+   {% block footer %}
+        <div class="footer-container mt-5 d-flex justify-content-around fixed-bottom">
+          <div class="grid-footer-flex">
+            <div class="grid-item-left">
+              <div class="footer-flex__menu-center mt-5">
+                <h5>Provoke Your Destiny</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('about')}}">A propos de nous</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('partenaires')}}">Devenir Partenaire</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+            <div class="grid-item-center">
+              <div class="footer-contact-top mt-5">
+                <h5>Contactez-nous</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('faq')}}">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="footer-help">
+                <h5>Informations</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('retours')}}">Politique des retours</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('tailles')}}">Guide des tailles</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('tailles')}}">Conditions Générale de Vente</a></li>
+                </ul>
+              </div>
+            </div>
+          <div class="footer-copyright mt-5">
+            <div class="grid">
+              <div class="copyright-left">
+                <p role="contentinfo">@ 2019 <strong>Provoke Corporation</strong> | Tous droits réservés |<br> ProvokeUrDestiny.com</p>
+              </div>
+              <div class="copyright-center">
+                <ul class="footer-list">
+                  <li><a href="{{path('confidentialite')}}">Politique de Confidentialité</a></li>
+                <ul>
+              </div>
+            </div>
+          </div>
+        {% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Provoke{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+ {% if app.user %}
+    <div class="alert alert-success">
+        <p>Content de vous revoir {{ app.user.nom }}</p>
+    </div>
+{% endif %}
+
+<div class="container-fluid">
+    <h1 class="main-title"> {{ controller_name }} Your Destiny</h1>
+
+    <div class="image-acceuil">
+        <img src = {{ asset('uploads/imagescat/hommes.jpg')}} class="img-fluid" alt="Responsive image">
+        <div class="description">
+            <h1>Flex up</h1>
+            <p class="p-description">Concentration. Style. Puissance. De la tête aux pieds.</p>
+            <a href="{{path('show_categories', { 'main' : 1 }) }}" class="btn btn-primary btn--hero">Explorer</a>
+        </div>
+    </div>
+     <div class="image-acceuil">
+        <img src = {{ asset('uploads/imageshome/femme2.png')}} class="img-fluid" alt="Responsive image">
+        <div class="description">
+            <h1>Système en marche</h1>
+            <p class="p-description">N'attendez pas demain, commencer votre entrainement dès maintenant.</p>
+            <a href="{{path('show_categories', { 'main' : 2 }) }}" class="btn btn-primary btn--hero">Explorer</a>
+        </div>
+        
+    </div>
+    <div class="image-acceuil">
+        <img src = {{ asset('uploads/imageshome/photohome3.jpg')}} class="img-fluid" alt="Responsive image">
+        <div class="description">
+            <h1>J'échoue, je recommence</h1>
+            <p class="p-description">Vas-y maintenant, pas demain nan.</p>
+            <a href="{{path('show_categories', { 'main' : 3 }) }}" class="btn btn-primary btn--hero">Explorer</a>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

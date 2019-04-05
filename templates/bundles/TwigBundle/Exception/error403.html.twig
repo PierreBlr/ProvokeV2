@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vous ne passerez pas | Provoke{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Vous ne passerez pas !</h1>
+    <div class="alert alert-danger">
+        <p>Fuyez pauvres fous</p>
+    </div>
+
+    <a href="{{ path('home')}}" class="btn btn-info">Revenir à la page d'acceuil</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Foire aux questions | Provoke{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Comment pouvons-nous vous aider ?</h1>
+    </div>
+
+    <div class="popular-questions mt-5">
+        <div class="container">
+            <h2>Questions Populaires</h2>
+            <p>Vous avez une question ? Pas de problèmes, cela arrive. Consulter notre FAQ ci-dessous pour trouver la réponse que vous cherchez. Malheureusement, nous n'avons pas encore toutes les réponses de la vie...</p>
+                <div class="popular-articles">
+                    <section class="recent-articles">
+                        <ul>
+                            <li><a href="{{path('retours')}}">J'ai besoin de faire un retour</a></li>
+                            <li><a href="{{path('tailles')}}">Le Guide des Tailles</a></li>
+                        </ul>
+                    </section>
+                </div>
+        </div>
+    </div>
+{% endblock %}

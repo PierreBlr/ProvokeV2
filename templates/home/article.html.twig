@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Provoke{% endblock %}
+
+{% block body %}
+<div class="container fiche-article">
+    <div class="row">
+        <div class="col">
+            <div class="image">
+                <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(\uploads\images\article\{{ article.image }}">
+                    <img src=\uploads\images\article\{{ article.image }}>
+                </figure>
+            </div>
+        </div>
+        <div class="col">
+            <div class="article-content">
+                <article>
+                    <h2>{{ article.nom }}</h2>
+                    <hr>
+                    <p>{{article.description}}</p>
+                    <p>{{article.prix}} €</p>
+                    {#{{ article|json_decode(caracteristiques)}}
+                    <p>{{article.caracteristiques}}</p>#}
+                </article>
+                <div class="ajout-panier">   
+                    <label for="quantite">Quantité</label>
+                        <div class="d-flex mb-5 produit-quantite">
+                            <form action="{{ path('shopping_cart') }}" method="get">
+                            <input type="hidden" name="id" value="{{ article.id }}">
+                            <select name="qtt">
+                                {% for i in 1..10 %}
+                                    <option value= "{{ i }}">{{ i }}</option>
+                                {% endfor %}
+                            </select><p>&nbsp;</p>
+                            <hr>
+                            <button class="btn btn-primary mt-5">Ajouter au panier</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+        <div class="footer-container mt-5 d-flex justify-content-around">
+          <div class="grid-footer-flex">
+            <div class="grid-item-left">
+              <div class="footer-flex__menu-center mt-5">
+                <h5>Provoke Your Destiny</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('about')}}">A propos de nous</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('partenaires')}}">Devenir Partenaire</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+            <div class="grid-item-center">
+              <div class="footer-contact-top mt-5">
+                <h5>Contactez-nous</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('faq')}}">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="footer-help">
+                <h5>Informations</h5>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('retours')}}">Politique des retours</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('tailles')}}">Guide des tailles</a></li>
+                </ul>
+                <ul class="footer-general-nav">
+                  <li><a href="{{path('cgv')}}">Conditions Générale de Vente</a></li>
+                </ul>
+              </div>
+            </div>
+          <div class="footer-copyright mt-5">
+            <div class="grid">
+              <div class="copyright-left">
+                <p role="contentinfo">@ 2019 <strong>Provoke Corporation</strong> | Tous droits réservés |<br> ProvokeUrDestiny.com</p>
+              </div>
+              <div class="copyright-center">
+                <ul class="footer-list">
+                  <li><a href="{{path('confidentialite')}}">Politique de Confidentialité</a></li>
+                <ul>
+              </div>
+              <div class="social">
+                <h5 class="mb-3">Réseaux Sociaux</h5>
+                  <a class="fb-ic mr-3" href="https://fr-fr.facebook.com/" target="blank"><i class="fab fa-facebook-f" style="font-size:23px;"></i></a>
+                  <a class="tw-ic mr-3" href="https://twitter.com/login?lang=fr" target="blank"><i class="fab fa-twitter" style="font-size:23px;"></i></a>
+                  <a class="ins-ic mr-3" href="https://www.instagram.com/?hl=fr" target="blank"><i class="fab fa-instagram" style="font-size:23px;"></i></a>
+                  <a class="ins-ic" href="https://www.spotify.com/fr/" target="blank"><i class="fab fa-spotify" style="font-size:23px;"></i></a>
+              </div>
+            </div>
+          </div>
+        {% endblock %}
+{% block javascript %}
+    <script>
+        function zoom(e){
+            var zoomer = e.currentTarget;
+            e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+            e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+            x = offsetX/zoomer.offsetWidth*100
+            y = offsetY/zoomer.offsetHeight*100
+            zoomer.style.backgroundPosition = x + '% ' + y + '%';
+        }
+    </script>
+{% endblock %}

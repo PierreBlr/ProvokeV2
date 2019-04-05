@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Work with us | Provoke{% endblock %}
+
+{% block body %}
+<style>
+    .about { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+
+
+<div class="container-fluid">
+ <h1 class="partner mb-5 text-center">Faites-vous parti d'une équipe de sport ?</h1>
+    <div class="row mt-5 text-center">
+        <div class="col">
+            <div class="partner-content">
+                <p>Voulez-vous faire partie de la #TeamProvokeIt et aider à maximiser le potentiel de votre club ?</p>
+                <p>Vous pouvez le faire dès à présent en soumettant le profil de votre équipe.</p>
+                <p>Que vous fassiez présentement partie d'une équipe de sport ou que vous ayez décidé de commencer une activité sportive, nous souhaitons faire partie de vos exploits !</p> 
+            </div>
+        </div>
+        <img src = {{ asset('uploads/imagesinfo/partenaire.png')}} class="img-partner-right img-fluid" alt="Responsive image">
+    </div>
+    <div class="row mt-5 text-center">
+        <div class="col">
+        <img src = {{ asset('uploads/imagesinfo/partenaire3.png')}} class="img-partner-left img-fluid" alt="Responsive image">
+            <div class="partner-content">
+                <h1 class="mb-5">Rejoignez-nous !</h1>
+                <p>Si vous souhaitez faire partie du programme, veuillez envoyer un e-mail à: <a href="mailto:press@provoke.com" target="_blank">press@provoke.com</a> détaillant le nom de votre club,<br> le sport et le site/réseaux sociaux du club (si applicable) en plus d'autres informations que vous jugerez importantes !</p>
+                </div>      
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

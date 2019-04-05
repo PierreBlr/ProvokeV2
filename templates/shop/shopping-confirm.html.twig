@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion de ma commmande | Provoke{% endblock %}
+
+{% block body %}
+
+<div class="panier">
+  <nav class="progress" style="display: table; margin: 0 auto">
+    <ul class="text-center"style="list-style: none; min-width: 500px; padding-top: 20px;">
+      <li class="current list-group-item" style="display:inline;">Votre Panier </li>
+      <li class="current list-group-item" style="display:inline"> Livraison/Paiement</li>
+      <li class="list-group-item" style="display:inline"> Confirmation</li>
+    </ul>
+  </nav>
+  <br>
+  <div class="container">
+  <div class="row mt-5">
+    <div class="col-sm">
+      <h3 class="titre">Adresse de Livraison</h3>
+        <div class="adresse-livraison">
+        {% if app.user %}
+          <div class="content">
+            <span class="adresse">{{ app.user.adresse }}</span><br>
+            <span class="code-postal">{{ app.user.codePostal }}</span><br>
+            <span class="ville">{{ app.user.ville }}</span><br>
+            <span class="pays">{{ app.user.pays }}</span>
+          </div>
+        </div>
+        {% endif %}
+      <a href="{{path('account_adresses')}}" class="btn btn-primary mt-3">Utilisez une autre adresse</a>
+    </div>
+    <div class="col-sm">
+      <h3 class="title">Recapitulatif de votre commande</h3>
+        <table class="resume">
+          <tr>
+            <td><span class="bold">{{ nb_articles }} article(s) dans votre commande pour un montant TTC de : </span></td>
+            <td class="prix">{{ total }}&nbsp;€</td>
+          </tr>
+        </table>
+    </div>
+  </div>
+  </div>
+  <div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="module-paiement mt-5">
+        <div class="title">
+          <h3 class="title">Choisissez votre mode de paiement</h3>
+        </div>
+        <div class="consentement">
+          <p>En cliquant sur un mode de paiement, je m'engage à payer le montant indiqué ci-dessus</p>
+        </div>
+        <p class="small">
+          En validant ma commande, je déclare avoir lu et accepté sans réserve les Conditions générales de Vente ci-dessous : 
+          Conditions générales de vente en vigueur, <a href="{{path('confidentialite')}}" target="_blank">cliquez-ici.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col">
+      <input type="radio" name="mercanet" value="mercanet">
+        <label for="mercanet"><strong>Paiement sécurisé Mercanet</strong></label>
+
+      <form name="redirectForm" method="POST" action=\"" . $paymentRequest->getUrl() . "\">" .
+		 "<input type="hidden" name="Data" value=\"". $paymentRequest->toParameterString() . "\">" .
+		 "<input type="hidden" name="InterfaceVersion" value=\"". Mercanet::INTERFACE_VERSION . "\">" .
+		 "<input type="hidden" name="Seal" value=\"" . $paymentRequest->getShaSign() > 
+		 "<noscript><input type="submit" name="Go" value=\"Click to continue\"/></noscript> </form>" .
+		 <script type=\"text/javascript\"> document.redirectForm.submit(); </script>
+    
+          
+      <img src = {{ asset('uploads/imagesco/paiement-securise-mercanet-bnp-paribas.png')}} class="img-mercanet float-right" alt="Responsive image">
+    </div>
+  </div>
+  <div class="choix-client mt-5 d-flex justify-content-around">
+    <a href="{{path('shopping_cart')}}" class="btn btn-primary">Retour au panier</a>
+    <a href="{{path('commande_ok')}}" class="btn btn-success">Procéder au paiement</a>
+  </div>
+</div> 
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Provoke{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">   
+    {% for categorie in cats %}
+        <div class="col">
+        <article>
+            <div class="article">
+                <a href='{{ path('show_articles', {'cat': categorie.id})}}'><img src=\uploads\images\categorie\{{ categorie.image }} alt="image-produit"></a>
+                <div class="info-article text-center">
+                <h2>{{ categorie.nom }}</h2>
+                <a href='{{ path('show_articles', {'cat': categorie.id}) }}'>Voir plus</a>
+                </div>
+            </div>
+            </article>
+        </div>
+    {% endfor %}
+    </div>
+ </div> 
+{% endblock %}
